@@ -87,7 +87,7 @@ body::after {
   width: 100%;
   height: 100%;
   background: linear-gradient(#2196f3, #e91e63 60%);
-  clip-path: circle(20% at 10% 10%);
+  clip-path: circle(20% at 5% 10%);
 }
 
 body .container {
@@ -227,7 +227,7 @@ body .container .card:hover .sci li {
   font-weight: 700;
   color: #fff;
   text-align: center;
-  margin: 5% 0;
+  margin: 10% 10%;
   line-height: 1.1em;
   z-index: 1;
 }
@@ -262,20 +262,28 @@ footer {
   width: 100%;
   height: 100%;
   text-align: center;
+  z-index: 1;
+  font-size: 2.5vh;
 }
 
 footer div {
   margin-bottom: 5vh;
 }
 
-html::before {
+#circle::after {
   content: "";
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: linear-gradient(#2196f3, #e91e63);
-  clip-path: circle(10% at 0% 95%);
-  z-index: 1;
+  clip-path: circle(10% at 0% 97.5%);
+  z-index: -1;
+}
+
+@media screen and (max-width: 850px) {
+  .container {
+    flex-direction: column !important;
+  }
 }
