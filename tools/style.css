@@ -287,3 +287,11 @@ footer div {
     flex-direction: column !important;
   }
 }
+
+.card a:hover {
+  cursor: default;
+}
+
+.card ul li a:hover {
+  cursor: pointer;
+}
