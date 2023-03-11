@@ -200,14 +200,6 @@ body .container {
   flex-wrap: nowrap;
 }
 
-.card a:hover {
-  cursor: default;
-}
-
-.card ul li a:hover {
-  cursor: pointer;
-}
-
 body .container .card {
   position: relative;
   width: 300px;
@@ -268,6 +260,14 @@ body .container .card .content .cardContent h3 span {
   font-size: 12px;
   font-weight: 300;
   text-transform: initial;
+}
+
+.card a:hover {
+  cursor: default;
+}
+
+.card .sci li a:hover {
+  cursor: pointer;
 }
 
 body .container .card .sci {
