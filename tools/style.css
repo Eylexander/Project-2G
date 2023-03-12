@@ -3,21 +3,25 @@
 @keyframes backgroundLoader {
   0% {
     opacity: 0;
-    filter: blur(5px);
+    filter: blur(8px);
+    backdrop-filter: blur(8px);
+    -webkit-filter: blur(8px);
   }
   100% {
     opacity: 1;
-    filter: blur(0px);
+    /* backdrop-filter: blur(5px); */
   }
 }
 @-webkit-keyframes backgroundLoader {
   0% {
     opacity: 0;
-    filter: blur(5px);
+    filter: blur(8px);
+    backdrop-filter: blur(8px);
+    -webkit-filter: blur(8px);
   }
   100% {
     opacity: 1;
-    filter: blur(0px);
+    /* backdrop-filter: blur(5px); */
   }
 }
 
@@ -131,14 +135,17 @@ body::before {
   height: 100%;
   background: linear-gradient(#f00, #f0f);
   clip-path: circle(30% at right 70%);
+  z-index: -10;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
 
-  -moz-animation: backgroundLoader 1.5s ease-in;
+  -moz-animation: backgroundLoader 1s ease-in;
   /* Firefox */
-  -webkit-animation: backgroundLoader 1.5s ease-in;
+  -webkit-animation: backgroundLoader 1s ease-in;
   /* Safari and Chrome */
-  -o-animation: backgroundLoader 1.5s ease-in;
+  -o-animation: backgroundLoader 1s ease-in;
   /* Opera */
-  animation: backgroundLoader 1.5s ease-in;
+  animation: backgroundLoader 1s ease-in;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
@@ -151,28 +158,9 @@ body::after {
   height: 100%;
   background: linear-gradient(#2196f3, #e91e63 60%);
   clip-path: circle(20% at 5% 10%);
-
-  -moz-animation: backgroundLoader 1.5s ease-in;
-  /* Firefox */
-  -webkit-animation: backgroundLoader 1.5s ease-in;
-  /* Safari and Chrome */
-  -o-animation: backgroundLoader 1.5s ease-in;
-  /* Opera */
-  animation: backgroundLoader 1.5s ease-in;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-
-#circle::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(#2196f3, #e91e63);
-  clip-path: circle(10% at 0% 97.5%);
-  z-index: -1;
+  z-index: -10;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
 
   -moz-animation: backgroundLoader 1s ease-in;
   /* Firefox */
@@ -183,6 +171,38 @@ body::after {
   animation: backgroundLoader 1s ease-in;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+}
+
+#circle {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#2196f3, #e91e63);
+  clip-path: circle(10% at 0% 97.5%);
+  z-index: -10;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+
+  -moz-animation: backgroundLoader 1s ease-in;
+  /* Firefox */
+  -webkit-animation: backgroundLoader 1s ease-in;
+  /* Safari and Chrome */
+  -o-animation: backgroundLoader 1s ease-in;
+  /* Opera */
+  animation: backgroundLoader 1s ease-in;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  backdrop-filter: blur(300px);
 }
 
 /* End of init circles */
@@ -322,11 +342,12 @@ body .container .card:hover .sci li {
   top: 100%;
   position: absolute;
   font-size: 20px;
+  transition: all 0.3s ease-in-out;
 }
 
 .imageDescription:hover img {
   opacity: 0.5;
-  transition: 0.5s;
+  transition: all 0.2s ease-in-out;
 }
 
 .imageDescription:hover span {
@@ -335,7 +356,7 @@ body .container .card:hover .sci li {
   width: 100;
   position: absolute;
   top: 100%;
-  transition: 0.5s;
+  
 }
 
 /* End of init Logos in Cards */
@@ -349,7 +370,7 @@ body .container .card:hover .sci li {
   opacity: 0;
   filter: blur(5px);
   transform: translateY(10%);
-  transition: all 1.5s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .show {
@@ -365,7 +386,7 @@ body .container .card:hover .sci li {
 }
 
 .card:nth-child(1) { /* Add this for multiple objects having different time to appear */
-  transition-delay: -0.5s;
+  transition-delay: -0.3s;
 }
 
 /* End of init JS */
